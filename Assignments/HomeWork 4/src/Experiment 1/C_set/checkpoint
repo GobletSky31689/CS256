@@ -1,0 +1,2 @@
+model_checkpoint_path: "x_train10000"
+all_model_checkpoint_paths: "x_train10000"

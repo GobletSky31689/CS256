@@ -1,0 +1,41 @@
+For Run1, i.e. experiments with Perceptron Learning Rule, I have conducted two sets of experiments
+
+Set 1: 
+Try to make my perceptron learn a simple Threshold function. I chose following ground function:
+TF
++0
++1 -1
+
+I used the following arguments:
+threshold perceptron ground_file.txt sphere 5000 2500 0.2
+
+This ground function corresponds to equation x=y. Also, since we are using step function as our activation function, by intuition, we already know perfect or ideal weights for our perceptron should be [1,-1,0]
+Since, we are using a sphere distribution, and equation is in 2 dimensions, our inputs can be imagined as residing on the circumference of a unit circle.
+Now, during each trail, after each update, we calculate the ratio of the inputs that are incorrectly identified by the perceptron. This value is our maximum error for that state of perceptron. We call this error value delta.
+For each trial, we plot a graph, m vs delta
+Now, we calculate average value of delta corresponding to m, and plot this in a graph. This is shown in set1_result.png file.
+We observe that average error keeps on reducing and we can say that our model is able to learn this linear threshold function. Though, we also observe that as our model reaches a sufficiently low delta value, we start getting diminishing returns.
+
+
+
+Set 2: 
+Try to make my perceptron learn a nested boolean function. I chose following ground function:
+NBF
++1 AND +2
+
+I used the following arguments:
+threshold perceptron ground_file.txt bool 5000 2500 0.2
+
+This ground function corresponds to simple AND operation. Image a boolean square, then our output is family of lines (hyperplane) that separates (1,1) from other three points.
+
+Since, possible number of inputs are countable, we first generate a ultimate input training set. Now, during each trail, after each update, we calculate the ratio of inputs that are incorrectly identified by the perceptron. This value is our maximum error for that state of perceptron. We call this error value delta.
+For each trial, we plot a graph, m vs delta
+Now, we calculate average value of delta corresponding to m, and plot this in a graph. This is shown in set2_result.png file.
+Just like linear threshold, we observe that average error keeps on reducing and we can say that our model is able to learn this nested boolean function. Unlike linear threshold though, we are able to reach the ideal state in countable number of steps. For our trial, we observe that it took an average of 12 updates for our perceptron to perfectly learn the AND operation. 
+
+
+
+
+
+
+

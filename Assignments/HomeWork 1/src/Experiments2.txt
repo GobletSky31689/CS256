@@ -1,0 +1,21 @@
+In Winnow update rule, both weights and threshold are greater than zero. Since, in case of threshold function, all the coefficients of the variables and threshold must be positive too. Because, these values correspond the actual hyperplane that we want to achieve.
+So, I cannot use the previous equation that was used for Runs1. I will be limiting the ground function to positive values only. 
+
+
+I have taken all initial weights as 1, theta as NUM_INPUTS, and learning rate (alpha) as 2
+I have chosen following random linear threshold function as my ground function for Set 1-3:
+
+TF
++9
++1 +10
+
+Arguments given in each set, respectively, are:
+
+threshold winnow ground_file.txt sphere 5000 2500 0.2
+tanh winnow ground_file.txt sphere 5000 2500 0.2
+relu winnow ground_file.txt sphere 5000 2500 0.2
+
+Observations:
+
+The three png files in the Runs2 folder shows the average delta vs m (updates) plot for each activation.
+We can observe that error value fluctuation is least in case of step function and worst in tanh function.
